@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:140px;}
+body{margin:0;font-family:'Open Sans',system-ui,sans-serif;color:#737b83;background:#fff;-webkit-font-smoothing:antialiased;}
+a{color:#43c3a0;text-decoration:none;}
+a:hover{color:#37a98a;}
+img{max-width:100%;display:block;}
+input,textarea,button{font-family:inherit;}
+::selection{background:#43c3a0;color:#fff;}
+.vt-desknav{display:flex;}
+.vt-burger{display:none;}
+@media(max-width:980px){.vt-desknav{display:none!important;}.vt-burger{display:inline-flex!important;}.vt-cta-head{display:none!important;}.vt-topx{display:none!important;}}
+</style>
+</helmet>
+
+<!-- ============ TOP UTILITY BAR ============ -->
+<div style="background:#3a4148;color:#c8ced3;font-size:13px;">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px;min-height:46px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;padding:6px 0;">
+      <a href="tel:7703295224" style="color:#e7ebee;display:inline-flex;align-items:center;gap:9px;font-weight:600;letter-spacing:.02em;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        (770) 329-5224
+      </a>
+      <a href="#contact" style="color:#c8ced3;display:inline-flex;align-items:center;gap:9px;" class="vt-topx">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        Schedule a Meeting
+      </a>
+      <span style="display:inline-flex;align-items:center;gap:9px;" class="vt-topx">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Metro Atlanta, Georgia
+      </span>
+    </div>
+    <div style="display:inline-flex;align-items:center;gap:18px;padding:6px 0;">
+      <a href="https://getonthevaluetrack.com/sell-business-faq/" style="color:#c8ced3;letter-spacing:.02em;" class="vt-topx">FAQ</a>
+      <a href="https://insights.getonthevaluetrack.com" style="color:#c8ced3;letter-spacing:.02em;" class="vt-topx">Insights</a>
+      <a href="https://www.linkedin.com/in/davidshavzin/" aria-label="LinkedIn" style="width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;" style-hover="background:#43c3a0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#e7ebee"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H21.4v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H13.7z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STICKY HEADER ============ -->
+<header id="vt-header" style="position:sticky;top:0;z-index:60;background:#fff;transition:box-shadow .3s ease;">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px;min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+    <a href="#home" style="display:inline-flex;align-items:center;flex-shrink:0;">
+      <img src="https://getonthevaluetrack.com/wp-content/uploads/cropped-the-value-track-logo-e1689430795234-262x69.png" alt="The Value Track" style="height:46px;width:auto;">
+    </a>
+    <nav class="vt-desknav" style="align-items:center;gap:32px;font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;">
+      <a href="#home" style="color:#2b3038;" style-hover="color:#43c3a0;">Home</a>
+      <a href="#services" style="color:#2b3038;" style-hover="color:#43c3a0;">Services</a>
+      <a href="#why" style="color:#2b3038;" style-hover="color:#43c3a0;">Why Us</a>
+      <a href="#about" style="color:#2b3038;" style-hover="color:#43c3a0;">About</a>
+      <a href="https://insights.getonthevaluetrack.com" style="color:#2b3038;" style-hover="color:#43c3a0;">Insights</a>
+    </nav>
+    <a href="#contact" class="vt-cta-head" style="display:inline-flex;align-items:center;border:2px solid #43c3a0;color:#2b3038;font-family:'Poppins',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;padding:13px 26px;border-radius:2px;transition:all .25s;" style-hover="background:#43c3a0;color:#fff;">Get in Touch</a>
+    <button class="vt-burger" onClick="{{ toggleMenu }}" aria-label="Menu" style="align-items:center;justify-content:center;width:46px;height:46px;background:#43c3a0;border:none;border-radius:3px;cursor:pointer;color:#fff;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="border-top:1px solid #eef1f3;background:#fff;font-family:'Poppins',sans-serif;font-weight:500;">
+      <a href="#home" onClick="{{ closeMenu }}" style="display:block;padding:15px 24px;color:#2b3038;border-bottom:1px solid #f2f4f5;">Home</a>
+      <a href="#services" onClick="{{ closeMenu }}" style="display:block;padding:15px 24px;color:#2b3038;border-bottom:1px solid #f2f4f5;">Services</a>
+      <a href="#why" onClick="{{ closeMenu }}" style="display:block;padding:15px 24px;color:#2b3038;border-bottom:1px solid #f2f4f5;">Why Us</a>
+      <a href="#about" onClick="{{ closeMenu }}" style="display:block;padding:15px 24px;color:#2b3038;border-bottom:1px solid #f2f4f5;">About</a>
+      <a href="https://insights.getonthevaluetrack.com" onClick="{{ closeMenu }}" style="display:block;padding:15px 24px;color:#2b3038;border-bottom:1px solid #f2f4f5;">Insights</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="display:block;padding:16px 24px;background:#43c3a0;color:#fff;letter-spacing:.12em;text-transform:uppercase;font-size:13px;">Get in Touch</a>
+    </nav>
+  </sc-if>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" style="position:relative;display:flex;align-items:center;min-height:640px;background-image:linear-gradient(120deg,rgba(30,44,50,.82),rgba(38,55,60,.55)),url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;">
+  <div style="max-width:1180px;margin:0 auto;padding:96px 24px;width:100%;">
+    <div style="max-width:660px;">
+      <p style="text-transform:uppercase;letter-spacing:.32em;font-size:14px;font-weight:600;color:#8fe3cc;margin:0 0 20px;font-family:'Poppins',sans-serif;">Planning to Sell?</p>
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(36px,5.6vw,62px);line-height:1.07;letter-spacing:-.01em;margin:0 0 24px;color:#fff;">Get your business on the Value Track.</h1>
+      <p style="font-size:19px;line-height:1.7;max-width:540px;margin:0 0 38px;color:#e6ecee;">Build the value of your business before you sell — then sell it right and get the return you deserve for your life's work.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;background:#43c3a0;color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;padding:18px 36px;border-radius:2px;transition:background .25s,transform .25s;" style-hover="background:#37a98a;transform:translateY(-2px);">Schedule a Meeting</a>
+        <a href="#services" style="display:inline-flex;align-items:center;gap:10px;border:2px solid rgba(255,255,255,.55);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;padding:16px 34px;border-radius:2px;transition:all .25s;" style-hover="background:#fff;color:#2b3038;border-color:#fff;">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS STRIP ============ -->
+<section style="background:#f5f7f8;border-bottom:1px solid #e9ecee;">
+  <div style="max-width:1180px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:32px;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>
+      <div><div style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;color:#8b939a;font-weight:600;">In Business Since</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;color:#2b3038;">2000</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
+      <div><div style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;color:#8b939a;font-weight:600;">Owner Experience</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;color:#2b3038;">25+ Years</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div><div style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;color:#8b939a;font-weight:600;">Our Approach</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;color:#2b3038;">Team-Based</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <div><div style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;color:#8b939a;font-weight:600;">Get Started</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;color:#2b3038;">60-Min Meeting</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION / INTRO ============ -->
+<section style="max-width:1180px;margin:0 auto;padding:96px 24px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:60px;align-items:center;">
+    <div data-reveal>
+      <p style="text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:#43c3a0;margin:0 0 18px;font-family:'Poppins',sans-serif;">Our Mission</p>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.18;color:#2b3038;margin:0 0 20px;">The toughest, most important sale you'll ever make — is selling your business.</h2>
+      <p style="font-size:20px;font-weight:600;color:#43c3a0;font-family:'Poppins',sans-serif;margin:0 0 22px;">Our mission is to help you do it right.</p>
+      <p style="font-size:16px;line-height:1.8;margin:0 0 18px;">Too many business owners wake up one day thinking they are ready to sell — but their business is not ready. Selling a business is an extremely complex, challenging process, and only a small percentage of privately-owned businesses ever sell at all.</p>
+      <p style="font-size:16px;line-height:1.8;margin:0 0 30px;">That's why we created The Value Track. You deserve to capitalize on your life's work and get out on your own terms — through a close partnership, a dynamic team approach, and a clear view of your company's value through the eyes of a buyer.</p>
+      <a href="#about" style="font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:.06em;color:#43c3a0;display:inline-flex;align-items:center;gap:8px;" style-hover="gap:12px;color:#37a98a;">More About Us <span>&rarr;</span></a>
+    </div>
+    <div data-reveal style="position:relative;">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80" alt="Business advisors reviewing an exit strategy" style="width:100%;height:480px;object-fit:cover;border-radius:4px;">
+      <div style="position:absolute;left:-22px;bottom:-22px;background:#43c3a0;color:#fff;padding:26px 30px;border-radius:4px;max-width:230px;box-shadow:0 18px 40px rgba(45,90,80,.28);">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;line-height:1;">20+</div>
+        <div style="font-size:14px;margin-top:6px;line-height:1.4;">years helping owners own their future</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" style="background:#f5f7f8;padding:96px 0;">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px;">
+    <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 58px;">
+      <p style="text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:#43c3a0;margin:0 0 16px;font-family:'Poppins',sans-serif;">What We Do</p>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.18;color:#2b3038;margin:0 0 18px;">How we get your business on track</h2>
+      <p style="font-size:16px;line-height:1.75;margin:0;">A unique team approach to exit planning that makes growth, value creation, and business-sale optimization achievable for owners.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+      <!-- card -->
+      <div data-reveal style="background:#fff;padding:42px 34px;border-radius:4px;border:1px solid #eaedef;transition:transform .3s,box-shadow .3s;" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,50,60,.10);">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/><path d="m7 12 2.5 2 4-4"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;color:#2b3038;margin:0 0 12px;">Value Building</h3>
+        <p style="font-size:15px;line-height:1.75;margin:0 0 20px;">Build the value of your business before you sell. We work on the areas buyers scrutinize most — so you grow the value that translates into a higher offer.</p>
+        <a href="#contact" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#43c3a0;display:inline-flex;align-items:center;gap:7px;" style-hover="gap:11px;">Learn More <span>&rarr;</span></a>
+      </div>
+      <div data-reveal style="background:#fff;padding:42px 34px;border-radius:4px;border:1px solid #eaedef;transition:transform .3s,box-shadow .3s;" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,50,60,.10);">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;color:#2b3038;margin:0 0 12px;">Sell Your Business</h3>
+        <p style="font-size:15px;line-height:1.75;margin:0 0 20px;">Sell your business and get the return you deserve. A smart, customized selling strategy guides you from decision through to the closing table.</p>
+        <a href="#contact" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#43c3a0;display:inline-flex;align-items:center;gap:7px;" style-hover="gap:11px;">Learn More <span>&rarr;</span></a>
+      </div>
+      <div data-reveal style="background:#fff;padding:42px 34px;border-radius:4px;border:1px solid #eaedef;transition:transform .3s,box-shadow .3s;" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,50,60,.10);">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M5 12H2M22 12h-3"/><circle cx="12" cy="12" r="6"/><path d="M12 9v3l2 1"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;color:#2b3038;margin:0 0 12px;">Business Valuation</h3>
+        <p style="font-size:15px;line-height:1.75;margin:0 0 20px;">Understand what it's worth. Knowing your value today sets a baseline for growth, maps your sale scenario, and gets everyone working from the same foundation.</p>
+        <a href="#contact" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#43c3a0;display:inline-flex;align-items:center;gap:7px;" style-hover="gap:11px;">Learn More <span>&rarr;</span></a>
+      </div>
+      <div data-reveal style="background:#fff;padding:42px 34px;border-radius:4px;border:1px solid #eaedef;transition:transform .3s,box-shadow .3s;" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,50,60,.10);">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;color:#2b3038;margin:0 0 12px;">Exit Planning</h3>
+        <p style="font-size:15px;line-height:1.75;margin:0 0 20px;">Set expectations and a clear path through exit planning to the closing table — with timing, succession, and transition mapped out well in advance.</p>
+        <a href="#contact" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#43c3a0;display:inline-flex;align-items:center;gap:7px;" style-hover="gap:11px;">Learn More <span>&rarr;</span></a>
+      </div>
+      <div data-reveal style="background:#fff;padding:42px 34px;border-radius:4px;border:1px solid #eaedef;transition:transform .3s,box-shadow .3s;" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,50,60,.10);">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;color:#2b3038;margin:0 0 12px;">Sale-Readiness Review</h3>
+        <p style="font-size:15px;line-height:1.75;margin:0 0 20px;">Get clear on the sale-readiness of your business, the key mistakes to avoid, and exactly how the value-building and sale processes really work.</p>
+        <a href="#contact" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#43c3a0;display:inline-flex;align-items:center;gap:7px;" style-hover="gap:11px;">Learn More <span>&rarr;</span></a>
+      </div>
+      <div data-reveal style="background:#fff;padding:42px 34px;border-radius:4px;border:1px solid #eaedef;transition:transform .3s,box-shadow .3s;" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,50,60,.10);">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;color:#2b3038;margin:0 0 12px;">Speaking &amp; Workshops</h3>
+        <p style="font-size:15px;line-height:1.75;margin:0 0 20px;">Bring The Value Track to your group. Practical, buyer-focused talks and workshops that help owners understand value, timing, and selling the right way.</p>
+        <a href="https://getonthevaluetrack.com/speaking/" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#43c3a0;display:inline-flex;align-items:center;gap:7px;" style-hover="gap:11px;">Learn More <span>&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US / SALE-READINESS CHECKLIST ============ -->
+<section id="why" style="max-width:1180px;margin:0 auto;padding:96px 24px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:60px;align-items:center;">
+    <div data-reveal>
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" alt="Owner reviewing business performance with an advisor" style="width:100%;height:500px;object-fit:cover;border-radius:4px;">
+    </div>
+    <div data-reveal>
+      <p style="text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:#43c3a0;margin:0 0 18px;font-family:'Poppins',sans-serif;">Sale-Readiness</p>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.18;color:#2b3038;margin:0 0 18px;">It's time to kick the tires on your own business.</h2>
+      <p style="font-size:16px;line-height:1.8;margin:0 0 28px;">Owners struggle to build the value they need because they aren't diving deeply enough into the areas a buyer will scrutinize. Start with the questions a buyer will ask:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 32px;margin-bottom:32px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#4c545b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>How dependent is the business on you?</div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#4c545b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>How clean and accurate are your records?</div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#4c545b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>Do sales rely on one person?</div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#4c545b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>Are you compliant on legal &amp; tax?</div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#4c545b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>Is your team aligned with your vision?</div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#4c545b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>Do you have recurring, repeat revenue?</div>
+      </div>
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;background:#43c3a0;color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;padding:16px 32px;border-radius:2px;transition:background .25s,transform .25s;" style-hover="background:#37a98a;transform:translateY(-2px);">Get Clear Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFFERENTIATORS BAND ============ -->
+<section style="background:#43c3a0;">
+  <div style="max-width:1180px;margin:0 auto;padding:64px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;">
+    <div style="color:#fff;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;margin-bottom:10px;">A close partnership</div>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#e9fbf5;">We work alongside you, not from a distance — invested in the outcome of your life's work.</p>
+    </div>
+    <div style="color:#fff;border-left:1px solid rgba(255,255,255,.28);padding-left:36px;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;margin-bottom:10px;">A dynamic team approach</div>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#e9fbf5;">The right team and suite of tools at the table for every stage of value building and sale.</p>
+    </div>
+    <div style="color:#fff;border-left:1px solid rgba(255,255,255,.28);padding-left:36px;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;margin-bottom:10px;">A smart, customized strategy</div>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#e9fbf5;">A selling strategy built around your business, your timeline, and the return you deserve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / FOUNDER ============ -->
+<section id="about" style="max-width:1180px;margin:0 auto;padding:96px 24px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px;align-items:center;">
+    <div data-reveal style="display:flex;justify-content:center;">
+      <div style="background:#f5f7f8;border:1px solid #eaedef;border-radius:6px;padding:44px 40px;text-align:center;max-width:360px;width:100%;">
+        <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#43c3a0,#2f9e82);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:44px;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">DS</div>
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:#2b3038;">David Shavzin</div>
+        <div style="color:#43c3a0;font-weight:600;font-size:14px;letter-spacing:.05em;margin-top:4px;">Founder, The Value Track</div>
+        <p style="font-size:14px;line-height:1.7;margin:18px 0 22px;">Value creation, exit strategy, succession planning &amp; business sales.</p>
+        <a href="https://www.linkedin.com/in/davidshavzin/" style="display:inline-flex;align-items:center;gap:9px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;color:#43c3a0;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#43c3a0"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H21.4v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H13.7z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+    <div data-reveal>
+      <p style="text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:#43c3a0;margin:0 0 18px;font-family:'Poppins',sans-serif;">About Us</p>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.18;color:#2b3038;margin:0 0 20px;">Helping business owners own their future.</h2>
+      <p style="font-size:16px;line-height:1.8;margin:0 0 18px;">David Shavzin, Founder of The Value Track, brings together a unique combination of skills in value creation, exit strategy, succession planning, and business sales — with the right team and suite of tools to bring to the table.</p>
+      <p style="font-size:16px;line-height:1.8;margin:0 0 30px;">He created the practice in 2000 to help business owners, partners, and family members benefit from their hard work — drawing on 25 years of experience guiding this usually once-in-a-lifetime milestone.</p>
+      <div style="display:flex;gap:40px;flex-wrap:wrap;">
+        <div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:32px;color:#2b3038;">2000</div><div style="font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#8b939a;font-weight:600;">Practice Founded</div></div>
+        <div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:32px;color:#2b3038;">25 Yrs</div><div style="font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#8b939a;font-weight:600;">Experience</div></div>
+        <div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:32px;color:#2b3038;">1:1</div><div style="font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#8b939a;font-weight:600;">Owner Partnership</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE / TESTIMONIAL (TODO: replace with real client testimonials) ============ -->
+<section style="background-image:linear-gradient(rgba(28,40,45,.88),rgba(28,40,45,.88)),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;">
+  <div data-reveal style="max-width:900px;margin:0 auto;padding:92px 24px;text-align:center;color:#fff;">
+    <svg width="46" height="46" viewBox="0 0 24 24" fill="#43c3a0" style="margin:0 auto 24px;"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 0 1 7.17 9.5zM18.5 6a5.17 5.17 0 0 0-5.17 5.17V18H20v-6.83h-3.33A1.67 1.67 0 0 1 18.5 9.5z"/></svg>
+    <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(22px,3vw,32px);line-height:1.45;margin:0 0 24px;">You deserve to capitalize on your life's work and get out on your own terms. Let's roll up our sleeves and get your business on The Value Track.</p>
+    <div style="color:#8fe3cc;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;">The Value Track</div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="background:#f5f7f8;padding:96px 0;">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start;">
+    <div data-reveal>
+      <p style="text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;color:#43c3a0;margin:0 0 18px;font-family:'Poppins',sans-serif;">Contact Us</p>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.18;color:#2b3038;margin:0 0 18px;">Get clear on the sale-readiness of your business.</h2>
+      <p style="font-size:16px;line-height:1.8;margin:0 0 34px;max-width:460px;">The best way to get started is to get informed. Schedule a 60-minute Value Track meeting and get a deeper understanding of your business value and how to sell the right way.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <div style="width:52px;height:52px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></div>
+        <div><div style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#8b939a;font-weight:600;">Call Us</div><a href="tel:7703295224" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;color:#2b3038;">(770) 329-5224</a></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <div style="width:52px;height:52px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#43c3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+        <div><div style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#8b939a;font-weight:600;">Email / Schedule</div><a href="https://getonthevaluetrack.com/contact-us/" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;color:#2b3038;">Book a Value Track Meeting</a></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="width:52px;height:52px;border-radius:50%;background:#eafaf5;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="#43c3a0"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H21.4v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H13.7z"/></svg></div>
+        <div><div style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#8b939a;font-weight:600;">Connect</div><a href="https://www.linkedin.com/in/davidshavzin/" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;color:#2b3038;">LinkedIn — David Shavzin</a></div>
+      </div>
+    </div>
+    <div data-reveal style="background:#fff;border:1px solid #eaedef;border-radius:6px;padding:40px 36px;box-shadow:0 20px 50px rgba(30,50,60,.06);">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#eafaf5;border:1px solid #b9e9dc;color:#2f8a72;border-radius:4px;padding:16px 18px;margin-bottom:24px;font-size:14px;display:flex;gap:10px;align-items:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f8a72" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Thanks — your message is ready to send. We'll be in touch shortly.
+        </div>
+      </sc-if>
+      <form onSubmit="{{ submit }}" novalidate="true">
+        <label style="display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:#2b3038;margin-bottom:7px;">Name</label>
+        <input value="{{ name }}" onInput="{{ onName }}" type="text" placeholder="Your full name" style="width:100%;padding:14px 16px;border:1px solid #dce1e4;border-radius:3px;font-size:15px;color:#2b3038;margin-bottom:4px;outline:none;transition:border-color .2s;" style-focus="border-color:#43c3a0;">
+        <sc-if value="{{ nameErr }}" hint-placeholder-val="{{ false }}"><div style="color:#d9534f;font-size:12.5px;margin-bottom:12px;">{{ nameErr }}</div></sc-if>
+        <div style="height:14px;"></div>
+        <label style="display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:#2b3038;margin-bottom:7px;">Email</label>
+        <input value="{{ email }}" onInput="{{ onEmail }}" type="email" placeholder="you@company.com" style="width:100%;padding:14px 16px;border:1px solid #dce1e4;border-radius:3px;font-size:15px;color:#2b3038;margin-bottom:4px;outline:none;transition:border-color .2s;" style-focus="border-color:#43c3a0;">
+        <sc-if value="{{ emailErr }}" hint-placeholder-val="{{ false }}"><div style="color:#d9534f;font-size:12.5px;margin-bottom:12px;">{{ emailErr }}</div></sc-if>
+        <div style="height:14px;"></div>
+        <label style="display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:#2b3038;margin-bottom:7px;">Phone <span style="color:#a7aeb4;font-weight:400;">(optional)</span></label>
+        <input value="{{ phone }}" onInput="{{ onPhone }}" type="tel" placeholder="(770) 000-0000" style="width:100%;padding:14px 16px;border:1px solid #dce1e4;border-radius:3px;font-size:15px;color:#2b3038;margin-bottom:18px;outline:none;transition:border-color .2s;" style-focus="border-color:#43c3a0;">
+        <label style="display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:#2b3038;margin-bottom:7px;">Tell us about your business</label>
+        <textarea value="{{ message }}" onInput="{{ onMessage }}" rows="4" placeholder="Where are you in the process, and what are your goals?" style="width:100%;padding:14px 16px;border:1px solid #dce1e4;border-radius:3px;font-size:15px;color:#2b3038;margin-bottom:4px;outline:none;resize:vertical;transition:border-color .2s;" style-focus="border-color:#43c3a0;"></textarea>
+        <sc-if value="{{ messageErr }}" hint-placeholder-val="{{ false }}"><div style="color:#d9534f;font-size:12.5px;margin-bottom:12px;">{{ messageErr }}</div></sc-if>
+        <div style="height:20px;"></div>
+        <button type="submit" style="width:100%;background:#43c3a0;color:#fff;border:none;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:17px;border-radius:2px;cursor:pointer;transition:background .25s;" style-hover="background:#37a98a;">Schedule a Meeting</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer style="background:#2a3038;color:#a7afb6;">
+  <div style="max-width:1180px;margin:0 auto;padding:70px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:44px;">
+    <div>
+      <img src="https://getonthevaluetrack.com/wp-content/uploads/cropped-the-value-track-logo-e1689430795234-262x69.png" alt="The Value Track" style="height:46px;width:auto;filter:grayscale(1) brightness(0) invert(0.78);">
+      <p style="font-size:14px;line-height:1.8;margin:18px 0 22px;max-width:280px;">Helping business owners get the most out of their life's work — building value, and selling the right way.</p>
+      <a href="https://www.linkedin.com/in/davidshavzin/" aria-label="LinkedIn" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;" style-hover="background:#43c3a0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H21.4v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H13.7z"/></svg></a>
+    </div>
+    <div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#fff;margin-bottom:20px;">Explore</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;">
+        <a href="#home" style="color:#a7afb6;" style-hover="color:#43c3a0;">Home</a>
+        <a href="#services" style="color:#a7afb6;" style-hover="color:#43c3a0;">Services</a>
+        <a href="#why" style="color:#a7afb6;" style-hover="color:#43c3a0;">Why Us</a>
+        <a href="#about" style="color:#a7afb6;" style-hover="color:#43c3a0;">About</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#fff;margin-bottom:20px;">Services</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;">
+        <a href="https://getonthevaluetrack.com/value-building/" style="color:#a7afb6;" style-hover="color:#43c3a0;">Value Building</a>
+        <a href="https://getonthevaluetrack.com/sell-your-business/" style="color:#a7afb6;" style-hover="color:#43c3a0;">Sell Your Business</a>
+        <a href="https://getonthevaluetrack.com/business-valuation/" style="color:#a7afb6;" style-hover="color:#43c3a0;">Business Valuation</a>
+        <a href="https://getonthevaluetrack.com/speaking/" style="color:#a7afb6;" style-hover="color:#43c3a0;">Speaking</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#fff;margin-bottom:20px;">Get In Touch</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;">
+        <a href="tel:7703295224" style="color:#a7afb6;" style-hover="color:#43c3a0;">(770) 329-5224</a>
+        <a href="https://getonthevaluetrack.com/contact-us/" style="color:#a7afb6;" style-hover="color:#43c3a0;">Contact Us</a>
+        <a href="https://getonthevaluetrack.com/sell-business-faq/" style="color:#a7afb6;" style-hover="color:#43c3a0;">FAQ</a>
+        <span style="color:#a7afb6;">Metro Atlanta, Georgia</span>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.08);">
+    <div style="max-width:1180px;margin:0 auto;padding:22px 24px;font-size:13px;color:#7e868d;">Copyright &copy; 2010 &ndash; 2026 The Value Track. All rights reserved. &nbsp;<span style="color:#5f676e;">Demo site — design language adapted from a financial-services template; content sourced from getonthevaluetrack.com.</span></div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { menuOpen:false, form:{name:'',email:'',phone:'',message:''}, errors:{}, sent:false };
+
+  componentDidMount(){
+    const header = document.getElementById('vt-header');
+    this._sc = () => { if(header){ header.style.boxShadow = window.scrollY > 18 ? '0 6px 22px rgba(20,30,40,.10)' : 'none'; } };
+    window.addEventListener('scroll', this._sc, {passive:true});
+    this._sc();
+    const obs = new IntersectionObserver((ents)=>{
+      ents.forEach((e)=>{ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; obs.unobserve(e.target); } });
+    }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('[data-reveal]').forEach((el)=>{
+      el.style.opacity='0';
+      el.style.transform='translateY(26px)';
+      el.style.transition='opacity .7s ease, transform .7s ease';
+      obs.observe(el);
+    });
+    this._obs = obs;
+  }
+
+  componentWillUnmount(){
+    if(this._sc) window.removeEventListener('scroll', this._sc);
+    if(this._obs) this._obs.disconnect();
+  }
+
+  set(field, v){
+    this.setState((s)=>({ form:{...s.form, [field]:v}, errors:{...s.errors, [field]:''}, sent:false }));
+  }
+
+  validate(){
+    const f = this.state.form, e = {};
+    if(!f.name.trim()) e.name = 'Please enter your name.';
+    if(!f.email.trim()) e.email = 'Please enter your email.';
+    else if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email)) e.email = 'Please enter a valid email address.';
+    if(!f.message.trim()) e.message = 'Please tell us a bit about your business.';
+    return e;
+  }
+
+  submit(ev){
+    ev.preventDefault();
+    const e = this.validate();
+    if(Object.keys(e).length){ this.setState({ errors:e, sent:false }); return; }
+    // TODO: wire to a real backend — POST this.state.form to your endpoint or form service
+    // (e.g. fetch('/api/contact', {method:'POST', body: JSON.stringify(this.state.form)}))
+    console.log('Contact form submission (stub):', this.state.form);
+    this.setState({ sent:true, form:{name:'',email:'',phone:'',message:''}, errors:{} });
+  }
+
+  renderVals(){
+    const f = this.state.form, er = this.state.errors;
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState((s)=>({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen:false }),
+      name: f.name, email: f.email, phone: f.phone, message: f.message,
+      onName: (e)=>this.set('name', e.target.value),
+      onEmail: (e)=>this.set('email', e.target.value),
+      onPhone: (e)=>this.set('phone', e.target.value),
+      onMessage: (e)=>this.set('message', e.target.value),
+      nameErr: er.name || '', emailErr: er.email || '', messageErr: er.message || '',
+      submit: (e)=>this.submit(e),
+      sent: this.state.sent,
+    };
+  }
+}
+</script>
+</body>
+</html>
