@@ -1,0 +1,22 @@
+# Replit configuration — press Run to install deps and start the Next.js dev server.
+run = "npm install && npm run dev"
+entrypoint = "app/page.tsx"
+modules = ["nodejs-20"]
+hidden = [".config", ".next", "node_modules"]
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+NEXT_TELEMETRY_DISABLED = "1"
+
+# Production deployment (Replit Deployments → Autoscale).
+# Replit injects PORT; the npm scripts bind 0.0.0.0:$PORT.
+[deployment]
+deploymentTarget = "autoscale"
+build = ["sh", "-c", "npm install && npm run build"]
+run = ["sh", "-c", "npm run start"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80

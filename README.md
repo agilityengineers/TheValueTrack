@@ -7,6 +7,35 @@ A production-quality, fully responsive single-page marketing website for **The V
 visual language and section rhythm of the TemplateMonster "Mortgates / Financial Services"
 template (demo ID 67116), adapted to Value Track's real brand and content.
 
+## Run & Deploy (Replit)
+
+This repo contains the production implementation of the design below: **Next.js (App Router) +
+TypeScript + Tailwind CSS**, one component per section under `components/`, design tokens in
+`tailwind.config.ts`, fonts self-hosted via `next/font`.
+
+**Run locally** (Node 18.18+):
+
+```bash
+npm install
+npm run dev     # http://localhost:3000 — binds 0.0.0.0, honors $PORT
+npm run build && npm run start   # production
+```
+
+**Run on Replit:** import this repo (Create Repl → Import from GitHub) and press **Run**.
+`.replit` + `replit.nix` pin Node 20, install dependencies, and start the dev server bound to
+`0.0.0.0:$PORT` so the webview picks it up automatically.
+
+**Deploy on Replit:** open **Deployments → Autoscale** and deploy — the build
+(`npm install && npm run build`) and run (`npm run start`) commands are preconfigured in
+`.replit`, and the server binds the `PORT` Replit injects.
+
+**Wiring left for production:**
+- `app/api/contact/route.ts` — the contact form POSTs here; it validates, logs, and returns
+  success. See the marked `TODO` to connect an email/form service (Resend, Formspree, HubSpot…).
+- `lib/site.ts` — all image URLs (Unsplash placeholders + hotlinked logo), external links, and
+  phone number centralized for easy swapping.
+- Quote band is a placeholder for real client testimonials (`components/Quote.tsx`).
+
 ## About the Design Files
 The files in this bundle are **design references created in HTML** — a prototype showing the
 intended look and behavior, **not** production code to ship as-is. `Value Track.dc.html` is a
